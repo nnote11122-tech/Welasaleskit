@@ -61,7 +61,7 @@ Deno.serve(async (req: Request) => {
     const floorPrice = Number(booking.floor_price);
     const below = floorPrice ? floorPrice - price : 0;
     const caption = [
-      `🏠 Agentwela — จองห้องสำเร็จ (${booking.building === "wela2" ? "WELA 2" : "WELA 1"})`,
+      `🏠 จองห้องสำเร็จ (${booking.building === "wela2" ? "WELA 2" : "WELA 1"})`,
       `📌 ห้อง: ${booking.unit_no}`,
       `👤 ลูกค้า: ${booking.customer_name}`,
       `📞 โทร: ${booking.customer_phone}`,
@@ -92,7 +92,7 @@ Deno.serve(async (req: Request) => {
       try {
         await send("sendPhoto", {
           photo: booking.snapshot_url,
-          caption: caption.length <= 1024 ? caption : `🏠 Agentwela — ห้อง ${booking.unit_no}`,
+          caption: caption.length <= 1024 ? caption : `🏠 ห้อง ${booking.unit_no}`,
         });
       } catch {
         // Preserve the quotation URL and booking details when Telegram cannot fetch the image.
