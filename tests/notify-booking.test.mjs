@@ -7,6 +7,7 @@ const source = await readFile(new URL('../supabase/functions/notify-booking/inde
 const { code } = await transform(source.replace(/^import .*;\r?\n/, ''), { loader: 'ts' });
 const booking = {
   id: '00000000-0000-4000-8000-000000000001', status: 'approved',
+  booking_code: 'WelaA-0001',
   building: 'wela1', unit_no: '201', customer_name: 'Test Customer',
   customer_phone: '0000000000', offer_price: 1000000,
   snapshot_url: 'https://example.invalid/quotation.jpg',
@@ -44,6 +45,9 @@ test('sends saved customer details and quotation photo without approval controls
   for (const value of ['Test Customer', '0000000000', '1,000,000']) assert.ok(payload.caption.includes(value));
   assert.ok(!payload.caption.includes('Forged browser value'));
   assert.equal(payload.reply_markup, undefined);
+  assert.ok(payload.caption.includes('เลขที่จอง: WelaA-0001'));
+  assert.ok(!payload.caption.includes(booking.id));
+  assert.ok(!payload.caption.includes('ไม่ต้องอนุมัติ'));
 });
 
 test('reports failed Telegram delivery instead of claiming success', async () => {

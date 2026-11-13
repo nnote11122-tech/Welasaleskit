@@ -73,8 +73,8 @@ Deno.serve(async (req: Request) => {
       details?.area ? `📐 พื้นที่: ${details.area} ตร.ม.` : "",
       booking.priv_added ? `➕ เพิ่ม: ${booking.priv_added}` : "",
       booking.priv_removed ? `➖ ตัด: ${booking.priv_removed}` : "",
-      "✅ บันทึกการจองเรียบร้อย ไม่ต้องอนุมัติ",
-      `เลขที่จอง: ${booking.id}`,
+      "✅ บันทึกการจองเรียบร้อย",
+      `เลขที่จอง: ${booking.booking_code}`,
     ].filter(Boolean).join("\n");
     const send = async (method: string, payload: Record<string, unknown>) => {
       const response = await fetch(`https://api.telegram.org/bot${token}/${method}`, {
