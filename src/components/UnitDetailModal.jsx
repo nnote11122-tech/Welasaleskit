@@ -29,7 +29,6 @@ const STATUS_STYLE = {
 };
 
 const MANAGER_ACTIONS = [
-  { status: 'asakan', label: 'Asakan', bg: '#e0f2fe', border: '#7dd3fc', text: '#075985' },
   { status: 'contracted',  label: '→ ทำสัญญา',       bg: '#fef2f2', border: '#fecaca', text: '#991b1b' },
   { status: 'transferred', label: '→ โอนแล้ว',        bg: '#f0fdf4', border: '#bbf7d0', text: '#14532d' },
   { status: 'available',   label: 'ยกเลิก / คืนสู่ว่าง', bg: '#f8fafc', border: '#cbd5e1', text: '#475569' },
@@ -74,6 +73,7 @@ export default function UnitDetailModal({ unit, building, isManager, onClose, on
   };
 
   const handleStatusChange = async (newStatus) => {
+    if (!isManager || unit?.status === 'asakan' || newStatus === 'asakan') return;
     setSaving(true);
     const fields = { status: newStatus };
     if (newStatus === 'available') fields.customer_name = null;
@@ -170,7 +170,8 @@ export default function UnitDetailModal({ unit, building, isManager, onClose, on
             </button>
             {notificationMessage && <p role={notificationError ? 'alert' : 'status'} className={`mt-3 text-sm leading-6 ${notificationError ? 'text-[#a62920]' : 'text-[#1b5238]'}`}>{notificationMessage}</p>}
           </div>}
-          {isManager && (
+          {unit?.status === 'asakan' && <p className="border-t border-[#001a33]/10 pt-4 text-sm leading-6 text-[#075985]">ห้อง Asakan ไม่สามารถเปลี่ยนสถานะผ่านหน้าเว็บได้</p>}
+          {isManager && unit?.status !== 'asakan' && (
             <div className="border-t border-[#001a33]/8 pt-4 space-y-2">
               <p className="text-[9px] font-black text-[#001a33]/30 uppercase tracking-widest mb-3">
                 เปลี่ยนสถานะ — Manager Only
