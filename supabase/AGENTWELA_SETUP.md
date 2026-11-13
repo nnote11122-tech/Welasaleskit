@@ -27,6 +27,16 @@ Destination: Agentwela (`xqdfojgschwurarfdgbp`).
 
 ## Remaining before the website is ready
 
+### Price import
+
+The `/admin/prices` page is available from the home page and the manager sidebar. It accepts CSV UTF-8 matching the downloadable example (2 MB and 1,000 rows maximum). Replace the illustrative row before importing. Required headers: `building`, `unit_no`, `base_price`. Missing columns preserve existing values; blank optional cells clear those values. Use `wela1` or `wela2` for building. Numeric cells accept plain numbers or correctly grouped, quoted thousands separators.
+
+`import_prices` is a SECURITY INVOKER RPC with manager-only checks and RLS. No service-role key is needed by the importer or browser. It validates the entire batch, previews additions/updates/unchanged rows and field changes, and requires a matching preview fingerprint before an atomic commit. Imports have an audit summary in `price_imports`.
+
+Only a trusted administrator can assign `profiles.role = 'manager'` to a verified user's UUID. New users receive sales access and cannot elevate themselves. An import adds price records only; it does not create missing units.
+
+Validation: nine Node tests pass, including existing notification tests and CSV parsing cases. Database integration tests cover manager access, blocked sales/direct writes and anonymous RPC access, dry-run behavior, stale previews, preserving omitted fields, intentional clearing, duplicate/invalid batches, and audit rows; all test data is rolled back. Production build passes. Browser visual verification could not complete because the computer-use host could not establish the current Chrome URL.
+
 1. Decide which room statuses and price records to initialize. Application tables are empty.
 2. Configure Auth, Google OAuth, site/redirect URLs, and approved users/roles. The copied Auth trigger creates a sales profile for every newly created Auth user, so unrestricted signup must not be enabled for a restricted staff application.
 3. Create the quotations bucket and authenticated upload policies; assess the existing public-image URL flow for the intended access model.

@@ -1,8 +1,9 @@
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Images, Layers, BedDouble, MapPin, FileText, ChevronLeft
+  Images, Layers, BedDouble, MapPin, FileText, ChevronLeft, Upload
 } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 const WELA_RED = '#E14D43';
 
@@ -18,6 +19,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const { isManager } = useAuth();
 
   const handleNavigate = (path) => {
     navigate(`/project/${id}/${path}`);
@@ -83,6 +85,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
         {/* Navigation */}
         <nav className="flex-1 px-4 space-y-1 overflow-y-auto">
+          {isManager && <button onClick={() => { navigate('/admin/prices'); setIsOpen(false); }} className="flex min-h-11 w-full items-center gap-3.5 rounded-xl px-4 py-3.5 text-left text-sm font-medium text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"><Upload size={15} aria-hidden="true" /> นำเข้าราคา</button>}
           {sideMenus.map((menu) => {
             const isActive = location.pathname.includes(menu.path);
             const Icon = menu.icon;

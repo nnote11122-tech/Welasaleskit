@@ -12,6 +12,7 @@ import Location from './pages/Location';
 import Quotation from './pages/Quotation';
 import UnitMatrix from './pages/UnitMatrix';
 import Booking from "./pages/Booking";
+import PriceImport from './pages/PriceImport';
 
 // --- LoginScreen: ปรับ UI ให้เข้ากับ WELA CI ---
 function LoginScreen({ onLogin, correctPass = '8888', title = "ASAKAN DEVELOPMENT", subtitle = "WELA", label = "ENTER PASSCODE" }) {
@@ -123,6 +124,7 @@ function App() {
       <div className="min-h-screen bg-[#001a33]">
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/admin/prices" element={<QuotationGuard><PriceImport /></QuotationGuard>} />
           <Route path="/" element={<Home />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/project/:id/gallery" element={<Gallery />} />
