@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Play, ArrowRight, MapPin, Building2, X, Upload } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 const WELA_RED = '#E14D43';
 const WELA_NAVY = '#001a33';
@@ -55,6 +56,7 @@ const stagger = {
 
 export default function Home() {
   const navigate = useNavigate();
+  const { isManager } = useAuth();
   const [showVideo, setShowVideo] = useState(false);
   const videoRef = useRef(null);
 
@@ -111,7 +113,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <button onClick={() => navigate('/admin/prices')} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#a8b7c5] px-4 py-2 text-sm font-medium text-[#001a33] hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#001a33]"><Upload size={16} aria-hidden="true" /> นำเข้าราคา</button>
+        <div className="flex items-center gap-3 sm:gap-5">
         <div className="hidden sm:flex items-center gap-6">
           <div className="flex items-center gap-2 text-[#001a33]/50">
             <MapPin size={13} style={{ color: WELA_RED }} />
@@ -126,6 +128,15 @@ export default function Home() {
               Sales Office
             </span>
           </div>
+        </div>
+          {isManager && <button
+            onClick={() => navigate('/admin/prices')}
+            aria-label="นำเข้าราคา"
+            title="นำเข้าราคา"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-[#526c83] transition-colors hover:bg-[#001a33]/5 hover:text-[#001a33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001a33]"
+          >
+            <Upload size={16} aria-hidden="true" />
+          </button>}
         </div>
       </motion.nav>
 
