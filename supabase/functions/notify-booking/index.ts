@@ -17,7 +17,8 @@ class TelegramDeliveryError extends Error {
 }
 
 function telegramError(status: number, description: string) {
-  if (status === 401 || status === 404) return new TelegramDeliveryError('invalid_token', 'Bot Token ไม่ถูกต้อง กรุณาตรวจ TELEGRAM_BOT_TOKEN ใน Agentwela');
+  if (status === 401) return new TelegramDeliveryError('invalid_token', 'Telegram ไม่ยอมรับ Bot Token ที่ Agentwela อ่านได้ กรุณาตรวจค่าที่บันทึกใน TELEGRAM_BOT_TOKEN');
+  if (status === 404) return new TelegramDeliveryError('telegram_endpoint_not_found', 'Telegram ไม่พบปลายทาง API กรุณาตรวจว่า TELEGRAM_BOT_TOKEN เป็น token ทั้งชุด ไม่ใช่ชื่อ bot หรือ URL');
   if (status === 403) return new TelegramDeliveryError('bot_forbidden', 'Bot ส่งข้อความไม่ได้ กรุณาตรวจว่า bot ยังอยู่ในกลุ่มและมีสิทธิ์ส่งข้อความ');
   if (/chat not found/i.test(description)) return new TelegramDeliveryError('chat_not_found', 'ไม่พบกลุ่ม Telegram กรุณาตรวจ TELEGRAM_CHAT_ID และเพิ่ม bot เข้ากลุ่ม');
   if (status === 429) return new TelegramDeliveryError('rate_limited', 'Telegram จำกัดการส่งชั่วคราว กรุณารอสักครู่แล้วส่งแจ้งเตือนอีกครั้ง');
@@ -50,6 +51,10 @@ Deno.serve(async (req: Request) => {
     const token = Deno.env.get("TELEGRAM_BOT_TOKEN")?.trim();
     const chatId = Deno.env.get("TELEGRAM_CHAT_ID")?.trim();
     if (!token || !chatId) return json({ error: "ยังไม่ได้ตั้ง TELEGRAM_BOT_TOKEN หรือ TELEGRAM_CHAT_ID ใน Agentwela" }, 503);
+    if (!/^\d+:[A-Za-z0-9_-]+$/.test(token)) {
+      console.error('[notify-booking]', JSON.stringify({ reason: 'token_format_invalid', hasColon: token.includes(':'), hasWhitespace: /\s/.test(token) }));
+      return json({ error: 'ค่าที่ Agentwela อ่านจาก TELEGRAM_BOT_TOKEN ไม่ใช่รูปแบบ token ของ Telegram ต้องเป็นตัวเลข ตามด้วย : และตัวอักษร โดยไม่มีข้อความอื่นปน', reason: 'token_format_invalid' }, 503);
+    }
 
     const details = booking.quote_snapshot?.quotation;
     const price = Number(booking.offer_price);

@@ -12,7 +12,7 @@ const booking = {
   snapshot_url: 'https://example.invalid/quotation.jpg',
 };
 
-function harness({ record = booking, telegramOK = true, telegramStatus = 502, description = '', secrets = true, authenticated = true } = {}) {
+function harness({ record = booking, telegramOK = true, telegramStatus = 502, description = '', secrets = true, authenticated = true, token = '123456789:TEST_ONLY_NOT_A_REAL_TOKEN' } = {}) {
   let handler;
   const sent = [];
   const query = { select: () => query, eq: () => query, single: async () => ({ data: record }) };
@@ -22,7 +22,7 @@ function harness({ record = booking, telegramOK = true, telegramStatus = 502, de
   });
   const deno = {
     serve: fn => { handler = fn; },
-    env: { get: key => key.startsWith('TELEGRAM_') ? (secrets ? 'test-only' : undefined) : 'test-only' },
+    env: { get: key => key.startsWith('TELEGRAM_') ? (secrets ? (key === 'TELEGRAM_BOT_TOKEN' ? token : '-1000000000000') : undefined) : 'test-only' },
   };
   const fetchMock = async (url, options) => {
     sent.push({ url, body: JSON.parse(options.body) });
@@ -54,6 +54,7 @@ test('reports failed Telegram delivery instead of claiming success', async () =>
 test('identifies token, chat, and permission failures without exposing secrets', async () => {
   for (const [status, description, reason] of [
     [401, 'Unauthorized', 'invalid_token'],
+    [404, 'Not Found', 'telegram_endpoint_not_found'],
     [400, 'Bad Request: chat not found', 'chat_not_found'],
     [403, 'Forbidden: bot was kicked', 'bot_forbidden'],
     [429, 'Too Many Requests', 'rate_limited'],
@@ -64,6 +65,18 @@ test('identifies token, chat, and permission failures without exposing secrets',
     assert.equal(response.status, 502);
     assert.equal(body.reason, reason);
     assert.equal(JSON.stringify(body).includes('test-only'), false);
+  }
+});
+
+test('rejects copied names or surrounding text before contacting Telegram', async () => {
+  for (const token of ['@Welaapprovebot', 'Here is the token for bot', 'bot12345:ABC', '12345:ABC DEF']) {
+    const h = harness({ token });
+    const response = await h.run();
+    assert.equal(response.status, 503);
+    const body = await response.json();
+    assert.equal(body.reason, 'token_format_invalid');
+    assert.equal(h.sent.length, 0);
+    assert.equal(JSON.stringify(body).includes(token), false);
   }
 });
 
