@@ -100,7 +100,7 @@ export default function Booking() {
         await notifyBooking(bookingResult.id);
         alert("จองห้องสำเร็จ");
       } catch (notifyError) {
-        alert(`จองห้องสำเร็จแล้ว แต่แจ้ง Telegram ไม่สำเร็จ: ${notifyError.message}\nไม่ต้องจองซ้ำ สามารถส่งแจ้งเตือนอีกครั้งได้จากรายละเอียดห้องใน Matrix`);
+        alert(`จองห้องสำเร็จแล้ว แต่แจ้ง Telegram ไม่สำเร็จ: ${notifyError.message}\nกรุณาติดต่อผู้ดูแล ไม่ต้องจองซ้ำ`);
       }
       navigate("/");
 

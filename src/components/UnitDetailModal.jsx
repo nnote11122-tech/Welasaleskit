@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { X } from 'lucide-react';
-import { notifyBooking } from '../lib/bookingNotifications';
 
 const WELA_NAVY = '#001a33';
 const WELA_RED  = '#E14D43';
@@ -38,24 +37,6 @@ export default function UnitDetailModal({ unit, building, isManager, onClose, on
   const [customerName, setCustomerName] = useState(unit?.customer_name || '');
   const [notes,        setNotes]        = useState(unit?.notes || '');
   const [saving,       setSaving]       = useState(false);
-  const [notifying, setNotifying] = useState(false);
-  const [notificationMessage, setNotificationMessage] = useState('');
-  const [notificationError, setNotificationError] = useState(false);
-
-  const resendNotification = async () => {
-    setNotifying(true); setNotificationMessage(''); setNotificationError(false);
-    try {
-      const { data, error } = await supabase.from('bookings').select('id')
-        .eq('building', building).eq('unit_no', unit.unit_no).eq('status', 'approved')
-        .order('created_at', { ascending: false }).limit(1).maybeSingle();
-      if (error) throw error;
-      if (!data) throw new Error('ไม่พบรายการจองที่ยืนยันแล้วของห้องนี้');
-      const result = await notifyBooking(data.id);
-      setNotificationMessage(result.warning ? 'ส่งรายละเอียดและลิงก์ใบเสนอราคาแล้ว แต่ Telegram โหลดรูปไม่สำเร็จ' : 'ส่งแจ้งเตือน Telegram เรียบร้อย');
-    } catch (error) {
-      setNotificationError(true); setNotificationMessage(error.message);
-    } finally { setNotifying(false); }
-  };
 
   const update = async (fields) => {
     await supabase
@@ -164,12 +145,6 @@ export default function UnitDetailModal({ unit, building, isManager, onClose, on
           </button>
 
           {/* Manager-only status buttons */}
-          {unit?.status === 'reserved' && <div className="border-t border-[#001a33]/10 pt-4">
-            <button onClick={resendNotification} disabled={notifying} className="min-h-11 w-full rounded-lg border border-[#8fa9bf] px-4 py-2 text-sm font-medium text-[#001a33] hover:bg-[#edf3f8] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#001a33]">
-              {notifying ? 'กำลังส่งแจ้งเตือน…' : 'ส่งแจ้งเตือน Telegram อีกครั้ง'}
-            </button>
-            {notificationMessage && <p role={notificationError ? 'alert' : 'status'} className={`mt-3 text-sm leading-6 ${notificationError ? 'text-[#a62920]' : 'text-[#1b5238]'}`}>{notificationMessage}</p>}
-          </div>}
           {unit?.status === 'asakan' && <p className="border-t border-[#001a33]/10 pt-4 text-sm leading-6 text-[#075985]">ห้อง Asakan ไม่สามารถเปลี่ยนสถานะผ่านหน้าเว็บได้</p>}
           {isManager && unit?.status !== 'asakan' && (
             <div className="border-t border-[#001a33]/8 pt-4 space-y-2">
