@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 import html2canvas from "html2canvas";
 import QuotationFullPage from "./Quotation"; // สำหรับแอบแคปหน้าจริง
+import { notifyBooking } from '../lib/bookingNotifications';
 
 export default function Booking() {
   const quotationRef = useRef(null);
@@ -95,28 +96,11 @@ export default function Booking() {
       if (dbError) throw dbError;
 
       // 3. แจ้ง Telegram ผ่าน Supabase Edge Function
-      const { data: notification, error: notifyError } = await supabase.functions.invoke("notify-booking", {
-        body: {
-          booking_id: bookingResult.id,
-          unit: quotation.unit,
-          building: buildingKey,
-          customer: customerName,
-          phone: customerPhone,
-          price: netPrice,
-          base_price: quotation.price,
-          floor_price: quotation.floorPrice,
-          priv_added: addedFreebies.join(", "),
-          priv_removed: removedFreebies.join(", "),
-          details: { floor: quotation.floor, area: quotation.area },
-          image_url: publicImageUrl,
-        },
-      });
-
-      if (notifyError || !notification?.ok) {
-        console.error("Booking saved; Telegram notification failed", notifyError);
-        alert("จองห้องสำเร็จแล้ว แต่ส่งแจ้งเตือน Telegram ไม่สำเร็จ กรุณาติดต่อผู้ดูแล ไม่ต้องจองซ้ำ");
-      } else {
+      try {
+        await notifyBooking(bookingResult.id);
         alert("จองห้องสำเร็จ");
+      } catch (notifyError) {
+        alert(`จองห้องสำเร็จแล้ว แต่แจ้ง Telegram ไม่สำเร็จ: ${notifyError.message}\nไม่ต้องจองซ้ำ สามารถส่งแจ้งเตือนอีกครั้งได้จากรายละเอียดห้องใน Matrix`);
       }
       navigate("/");
 

@@ -12,6 +12,18 @@ function json(body: unknown, status = 200) {
   });
 }
 
+class TelegramDeliveryError extends Error {
+  constructor(public reason: string, message: string) { super(message); }
+}
+
+function telegramError(status: number, description: string) {
+  if (status === 401 || status === 404) return new TelegramDeliveryError('invalid_token', 'Bot Token ไม่ถูกต้อง กรุณาตรวจ TELEGRAM_BOT_TOKEN ใน Agentwela');
+  if (status === 403) return new TelegramDeliveryError('bot_forbidden', 'Bot ส่งข้อความไม่ได้ กรุณาตรวจว่า bot ยังอยู่ในกลุ่มและมีสิทธิ์ส่งข้อความ');
+  if (/chat not found/i.test(description)) return new TelegramDeliveryError('chat_not_found', 'ไม่พบกลุ่ม Telegram กรุณาตรวจ TELEGRAM_CHAT_ID และเพิ่ม bot เข้ากลุ่ม');
+  if (status === 429) return new TelegramDeliveryError('rate_limited', 'Telegram จำกัดการส่งชั่วคราว กรุณารอสักครู่แล้วส่งแจ้งเตือนอีกครั้ง');
+  return new TelegramDeliveryError('delivery_failed', 'Telegram ไม่รับข้อความ กรุณาให้ผู้ดูแลตรวจ log ของ notify-booking');
+}
+
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
@@ -35,9 +47,9 @@ Deno.serve(async (req: Request) => {
       .select("*").eq("id", body.booking_id).single();
     if (error || !booking) return json({ error: "Booking not found or access denied" }, 404);
     if (booking.status !== "approved") return json({ error: "Booking is not confirmed" }, 409);
-    const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
-    const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
-    if (!token || !chatId) return json({ error: "Telegram secrets are not configured" }, 503);
+    const token = Deno.env.get("TELEGRAM_BOT_TOKEN")?.trim();
+    const chatId = Deno.env.get("TELEGRAM_CHAT_ID")?.trim();
+    if (!token || !chatId) return json({ error: "ยังไม่ได้ตั้ง TELEGRAM_BOT_TOKEN หรือ TELEGRAM_CHAT_ID ใน Agentwela" }, 503);
 
     const details = booking.quote_snapshot?.quotation;
     const price = Number(booking.offer_price);
@@ -65,7 +77,11 @@ Deno.serve(async (req: Request) => {
         body: JSON.stringify({ chat_id: chatId, ...payload }),
       });
       const result = await response.json();
-      if (!response.ok || !result.ok) throw new Error("Telegram delivery failed");
+      if (!response.ok || !result.ok) {
+        const error = telegramError(response.status, String(result.description ?? ''));
+        console.error('[notify-booking]', JSON.stringify({ method, status: response.status, reason: error.reason }));
+        throw error;
+      }
     };
     if (booking.snapshot_url) {
       try {
@@ -83,7 +99,9 @@ Deno.serve(async (req: Request) => {
       await send("sendMessage", { text: caption.slice(0, 4096) });
     }
     return json({ ok: true });
-  } catch {
-    return json({ error: "Unable to send Telegram notification" }, 502);
+  } catch (error) {
+    if (error instanceof TelegramDeliveryError) return json({ error: error.message, reason: error.reason }, 502);
+    console.error('[notify-booking]', JSON.stringify({ reason: 'unexpected_delivery_failure' }));
+    return json({ error: "เชื่อมต่อระบบแจ้งเตือนไม่สำเร็จ กรุณาลองส่งแจ้งเตือนอีกครั้ง" }, 502);
   }
 });

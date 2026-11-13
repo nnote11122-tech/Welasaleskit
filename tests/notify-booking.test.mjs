@@ -12,7 +12,7 @@ const booking = {
   snapshot_url: 'https://example.invalid/quotation.jpg',
 };
 
-function harness({ record = booking, telegramOK = true, secrets = true, authenticated = true } = {}) {
+function harness({ record = booking, telegramOK = true, telegramStatus = 502, description = '', secrets = true, authenticated = true } = {}) {
   let handler;
   const sent = [];
   const query = { select: () => query, eq: () => query, single: async () => ({ data: record }) };
@@ -26,7 +26,7 @@ function harness({ record = booking, telegramOK = true, secrets = true, authenti
   };
   const fetchMock = async (url, options) => {
     sent.push({ url, body: JSON.parse(options.body) });
-    return { ok: telegramOK, json: async () => ({ ok: telegramOK }) };
+    return { ok: telegramOK, status: telegramOK ? 200 : telegramStatus, json: async () => ({ ok: telegramOK, description }) };
   };
   new Function('createClient', 'Deno', 'fetch', code)(createClient, deno, fetchMock);
   return { sent, run: () => handler(new Request('https://example.invalid', {
@@ -49,6 +49,22 @@ test('sends saved customer details and quotation photo without approval controls
 test('reports failed Telegram delivery instead of claiming success', async () => {
   const h = harness({ telegramOK: false });
   assert.equal((await h.run()).status, 502);
+});
+
+test('identifies token, chat, and permission failures without exposing secrets', async () => {
+  for (const [status, description, reason] of [
+    [401, 'Unauthorized', 'invalid_token'],
+    [400, 'Bad Request: chat not found', 'chat_not_found'],
+    [403, 'Forbidden: bot was kicked', 'bot_forbidden'],
+    [429, 'Too Many Requests', 'rate_limited'],
+  ]) {
+    const h = harness({ telegramOK: false, telegramStatus: status, description });
+    const response = await h.run();
+    const body = await response.json();
+    assert.equal(response.status, 502);
+    assert.equal(body.reason, reason);
+    assert.equal(JSON.stringify(body).includes('test-only'), false);
+  }
 });
 
 test('rejects anonymous callers, pending bookings, and missing secrets without sending', async () => {
