@@ -76,46 +76,26 @@ export default function Booking() {
         publicImageUrl = urlData.publicUrl;
       }
 
-      // 1. lock ห้อง → status = pending (รอ manager approve)
-      const { data: lockRoom } = await supabase
-        .from("units")
-        .update({ status: "pending", customer_name: customerName })
-        .eq("building", buildingKey)
-        .eq("unit_no", quotation.unit)
-        .eq("status", "available")
-        .select();
-
-      if (!lockRoom || lockRoom.length === 0) {
-        alert("ห้องนี้ถูกจองไปแล้ว");
-        setLoading(false);
-        return;
-      }
-
-      // 2. insert booking
+      // จองทันที: อัปเดตห้องและบันทึกการจองใน transaction เดียว
       const { data: bookingResult, error: dbError } = await supabase
-        .from("bookings")
-        .insert({
+        .rpc("reserve_unit_booking", { payload: {
           building: buildingKey,
           unit_no: quotation.unit,
           customer_name: customerName,
           customer_phone: customerPhone,
           offer_price: netPrice,
           floor_price: quotation.floorPrice,
-          sales_name: "saleskit",
           priv_removed: removedFreebies.join(", "),
           priv_added: addedFreebies.join(", "),
           quote_snapshot: { quotation, netPrice, selectedFreebies },
           snapshot_url: publicImageUrl,
-          status: "pending"
-        })
-        .select()
+        } })
         .single();
 
       if (dbError) throw dbError;
 
       // 3. แจ้ง Telegram ผ่าน Supabase Edge Function
-      supabase.functions.invoke("notify-booking", {
-        headers: { Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}` },
+      const { data: notification, error: notifyError } = await supabase.functions.invoke("notify-booking", {
         body: {
           booking_id: bookingResult.id,
           unit: quotation.unit,
@@ -132,7 +112,12 @@ export default function Booking() {
         },
       });
 
-      alert("จองห้องสำเร็จ");
+      if (notifyError || !notification?.ok) {
+        console.error("Booking saved; Telegram notification failed", notifyError);
+        alert("จองห้องสำเร็จแล้ว แต่ส่งแจ้งเตือน Telegram ไม่สำเร็จ กรุณาติดต่อผู้ดูแล ไม่ต้องจองซ้ำ");
+      } else {
+        alert("จองห้องสำเร็จ");
+      }
       navigate("/");
 
     } catch (err) {

@@ -1,91 +1,89 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-
-const TELEGRAM_BOT_TOKEN = Deno.env.get("TELEGRAM_BOT_TOKEN") ?? "";
-const TELEGRAM_CHAT_ID   = Deno.env.get("TELEGRAM_CHAT_ID")   ?? "";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.99.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response("ok", { headers: corsHeaders });
-  }
+function json(body: unknown, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status, headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
 
+Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
+  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   try {
+    const authorization = req.headers.get("Authorization") ?? "";
+    if (!authorization.startsWith("Bearer ")) return json({ error: "Unauthorized" }, 401);
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_ANON_KEY") ?? "",
+      { global: { headers: { Authorization: authorization } }, auth: { persistSession: false } },
+    );
+    const { data: { user }, error: authError } = await supabase.auth.getUser(authorization.slice(7));
+    if (authError || !user) return json({ error: "Unauthorized" }, 401);
+
     const body = await req.json();
-    const {
-      booking_id, unit, building, customer, phone,
-      price, floor_price,
-      priv_added, priv_removed,
-      details, image_url,
-    } = body;
-
-    const buildingLabel = building === "wela2" ? "WELA 2" : "WELA 1";
-    const below = floor_price ? floor_price - price : 0;
-    const priceTag = below > 0
-      ? `⚠️ ต่ำกว่า Floor ${below.toLocaleString("th-TH")} บาท`
-      : below < 0
-      ? `✅ สูงกว่า Floor ${Math.abs(below).toLocaleString("th-TH")} บาท`
-      : "";
-
-    const caption = [
-      `🏠 จองห้องใหม่ — ${buildingLabel}`,
-      ``,
-      `📌 ห้อง: ${unit}`,
-      `👤 ลูกค้า: ${customer}`,
-      `📞 โทร: ${phone}`,
-      ``,
-      `💰 ราคาเสนอ: ${Number(price).toLocaleString("th-TH")} บาท`,
-      floor_price ? `🏷 Floor Price: ${Number(floor_price).toLocaleString("th-TH")} บาท` : "",
-      priceTag,
-      ``,
-      details?.floor ? `🏢 ชั้น: ${details.floor}` : "",
-      details?.area  ? `📐 พื้นที่: ${details.area} ตร.ม.` : "",
-      priv_added     ? `➕ เพิ่ม: ${priv_added}`   : "",
-      priv_removed   ? `➖ ตัด: ${priv_removed}` : "",
-    ].filter(Boolean).join("\n");
-
-    const replyMarkup = {
-      inline_keyboard: [[
-        { text: "✅ Approve", callback_data: `apr:${booking_id}` },
-        { text: "❌ Reject",  callback_data: `rej:${booking_id}` },
-      ]],
-    };
-
-    if (image_url) {
-      // ส่งรูปพร้อม inline button ใน caption (เหมือน working version)
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          photo: image_url,
-          caption,
-          reply_markup: replyMarkup,
-        }),
-      });
-    } else {
-      // fallback: ส่ง text ถ้าไม่มีรูป
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: caption,
-          reply_markup: replyMarkup,
-        }),
-      });
+    if (typeof body.booking_id !== "string" || !/^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i.test(body.booking_id)) {
+      return json({ error: "Valid booking_id is required" }, 400);
     }
+    // Read saved data through the caller's RLS, not browser-supplied prices or URLs.
+    const { data: booking, error } = await supabase.from("bookings")
+      .select("*").eq("id", body.booking_id).single();
+    if (error || !booking) return json({ error: "Booking not found or access denied" }, 404);
+    if (booking.status !== "approved") return json({ error: "Booking is not confirmed" }, 409);
+    const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
+    const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
+    if (!token || !chatId) return json({ error: "Telegram secrets are not configured" }, 503);
 
-    return new Response(JSON.stringify({ ok: true }), {
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
-    });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: String(err) }), {
-      status: 500,
-      headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
-    });
+    const details = booking.quote_snapshot?.quotation;
+    const price = Number(booking.offer_price);
+    const floorPrice = Number(booking.floor_price);
+    const below = floorPrice ? floorPrice - price : 0;
+    const caption = [
+      `🏠 Agentwela — จองห้องสำเร็จ (${booking.building === "wela2" ? "WELA 2" : "WELA 1"})`,
+      `📌 ห้อง: ${booking.unit_no}`,
+      `👤 ลูกค้า: ${booking.customer_name}`,
+      `📞 โทร: ${booking.customer_phone}`,
+      `💰 ราคาเสนอ: ${price.toLocaleString("th-TH")} บาท`,
+      floorPrice ? `🏷 Floor Price: ${floorPrice.toLocaleString("th-TH")} บาท` : "",
+      below > 0 ? `⚠️ ต่ำกว่า Floor ${below.toLocaleString("th-TH")} บาท` : "",
+      below < 0 ? `✅ สูงกว่า Floor ${Math.abs(below).toLocaleString("th-TH")} บาท` : "",
+      details?.floor ? `🏢 ชั้น: ${details.floor}` : "",
+      details?.area ? `📐 พื้นที่: ${details.area} ตร.ม.` : "",
+      booking.priv_added ? `➕ เพิ่ม: ${booking.priv_added}` : "",
+      booking.priv_removed ? `➖ ตัด: ${booking.priv_removed}` : "",
+      "✅ บันทึกการจองเรียบร้อย ไม่ต้องอนุมัติ",
+      `เลขที่จอง: ${booking.id}`,
+    ].filter(Boolean).join("\n");
+    const send = async (method: string, payload: Record<string, unknown>) => {
+      const response = await fetch(`https://api.telegram.org/bot${token}/${method}`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, ...payload }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error("Telegram delivery failed");
+    };
+    if (booking.snapshot_url) {
+      try {
+        await send("sendPhoto", {
+          photo: booking.snapshot_url,
+          caption: caption.length <= 1024 ? caption : `🏠 Agentwela — ห้อง ${booking.unit_no}`,
+        });
+      } catch {
+        // Preserve the quotation URL and booking details when Telegram cannot fetch the image.
+        await send("sendMessage", { text: caption.slice(0, 3500) + "\nรูปใบเสนอราคา: " + booking.snapshot_url });
+        return json({ ok: true, warning: "Photo delivery failed; quotation link sent" });
+      }
+      if (caption.length > 1024) await send("sendMessage", { text: caption.slice(0, 4096) });
+    } else {
+      await send("sendMessage", { text: caption.slice(0, 4096) });
+    }
+    return json({ ok: true });
+  } catch {
+    return json({ error: "Unable to send Telegram notification" }, 502);
   }
 });

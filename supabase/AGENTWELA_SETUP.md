@@ -1,0 +1,39 @@
+# Agentwela database setup
+
+Source: SaleskitWela (`lpwjkqxaajoohqxyjhag`).
+Destination: Agentwela (`xqdfojgschwurarfdgbp`).
+
+## Completed
+
+- Applied `initialize_agentwela_schema` to the destination using the live source catalog.
+- Created all six public tables, the unit status enum, primary/unique/foreign-key constraints, three functions, and two triggers.
+- Enabled Realtime for `public.units`.
+- Compared column definitions and constraints reported by the table inspector; they match the source.
+- Tested the new-user profile trigger, authenticated reads, unit updates, and booking inserts in a transaction that was rolled back.
+- No source database writes were performed. No source records or Auth users were transferred.
+- Applied `confirm_booking_without_approval`: `reserve_unit_booking` atomically marks an available unit as reserved and inserts an approved booking. Duplicate reservations and failed-insert rollback were tested in a rolled-back transaction.
+- Deployed `notify-booking` version 2 to Agentwela, with JWT verification and authenticated database reads. It sends customer name, phone, offered price, quotation image and booking details to the configured Telegram chat without approval buttons, as explicitly requested. No Telegram webhook was deployed or changed.
+
+## Deliberate access differences
+
+- Anonymous callers cannot access the application tables.
+- Authenticated users require a matching sales/manager profile to access units, prices, and bookings.
+- Browser users can read prices, read/update units, and read/insert bookings. Price sync and booking approval use server credentials.
+- Users can update their profile name, but cannot assign themselves a different role.
+- Trigger functions have a fixed search path and are not directly executable by browser roles.
+- Health tables and the health-ping function are restricted to server access. The health tables have no seed rows yet; health_ping will report a missing row until separately initialized.
+- Security advisors reported only two informational notices for the intentionally private health tables having RLS without browser policies:
+  https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy
+
+## Remaining before the website is ready
+
+1. Decide which room statuses and price records to initialize. Application tables are empty.
+2. Configure Auth, Google OAuth, site/redirect URLs, and approved users/roles. The copied Auth trigger creates a sales profile for every newly created Auth user, so unrestricted signup must not be enabled for a restricted staff application.
+3. Create the quotations bucket and authenticated upload policies; assess the existing public-image URL flow for the intended access model.
+4. Configure `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in Agentwela Edge Function secrets using the existing notification bot/group. This notification-only function does not set or use a webhook. Keep the old bot webhook unchanged. Delivery to the real chat has not been tested yet.
+5. Point the new Google Sheets sync at the destination project with its own server credential.
+6. Update Vercel environment variables and redeploy only once the backend is ready.
+
+The source has no public.rooms table even though MatrixFloorplan.jsx contains queries for it. Check whether that screen is used and align it with units before relying on it.
+
+The SQL file is an initial-schema migration for an empty destination. Do not run it again against an initialized database.
