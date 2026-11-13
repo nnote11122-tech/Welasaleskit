@@ -1,0 +1,2746 @@
+[
+  {
+    "building": "wela1",
+    "unit_no": "201",
+    "floor": "2",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.27"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "202",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "203",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "204",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "205",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "206",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "207",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "208",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "209",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "210",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "211",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "212",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "212A",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "214",
+    "floor": "2",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.27"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "215",
+    "floor": "2",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "216",
+    "floor": "2",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.01"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "217",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "218",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "219",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.94"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "220",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "221",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.94"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "222",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.98"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "223",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "224",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.9"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "225",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "226",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.9"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "227",
+    "floor": "2",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.99"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "228",
+    "floor": "2",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "301",
+    "floor": "3",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.27"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "302",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "303",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "304",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "305",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "306",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "307",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "308",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "309",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "310",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "311",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "312",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "313",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "314",
+    "floor": "3",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.27"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "315",
+    "floor": "3",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "316",
+    "floor": "3",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.01"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "317",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "318",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "319",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.94"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "320",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "321",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.94"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "322",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.98"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "323",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "324",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.9"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "325",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.44"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "326",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.9"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "327",
+    "floor": "3",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.99"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "328",
+    "floor": "3",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "401",
+    "floor": "4",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "402",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "403",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "404",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "405",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "406",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "407",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "408",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "409",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "410",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "411",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "412",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "413",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "414",
+    "floor": "4",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "415",
+    "floor": "4",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "416",
+    "floor": "4",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.08"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "417",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "418",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "419",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "420",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "421",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "422",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.03"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "423",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "424",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "425",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "426",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "427",
+    "floor": "4",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.07"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "428",
+    "floor": "4",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "501",
+    "floor": "5",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "502",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "503",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "504",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "505",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "506",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "507",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "508",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "509",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "510",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "511",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "512",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "513",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "514",
+    "floor": "5",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "515",
+    "floor": "5",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "516",
+    "floor": "5",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.08"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "517",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "518",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "519",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "520",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "521",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "522",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.03"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "523",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "524",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "525",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "526",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "527",
+    "floor": "5",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.07"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "528",
+    "floor": "5",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "601",
+    "floor": "6",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "602",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "603",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "604",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "605",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "606",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "607",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "608",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "609",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "610",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "611",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "612",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "613",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "614",
+    "floor": "6",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "615",
+    "floor": "6",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "616",
+    "floor": "6",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.08"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "617",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "618",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "619",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "620",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "621",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "622",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.03"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "623",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "624",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "625",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "626",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "627",
+    "floor": "6",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.07"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "628",
+    "floor": "6",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "701",
+    "floor": "7",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "702",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "703",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "704",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "705",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "706",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "707",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "708",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "709",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "710",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "711",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "712",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "713",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "714",
+    "floor": "7",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "715",
+    "floor": "7",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "716",
+    "floor": "7",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.08"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "717",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "718",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "719",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "720",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "721",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "722",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.03"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "723",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "724",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "725",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "726",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "727",
+    "floor": "7",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.07"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "728",
+    "floor": "7",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "801",
+    "floor": "8",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "802",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "803",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "804",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "805",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "806",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "807",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.84"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "808",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.23"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "809",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "810",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "811",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "812",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "813",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.97"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "814",
+    "floor": "8",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.34"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "815",
+    "floor": "8",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "816",
+    "floor": "8",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.08"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "817",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.93"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "818",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "819",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "820",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "821",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "822",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.03"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "823",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.92"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "824",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "825",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.51"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "826",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.91"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "827",
+    "floor": "8",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "29.07"
+  },
+  {
+    "building": "wela1",
+    "unit_no": "828",
+    "floor": "8",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "46.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "201",
+    "floor": "2",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.76"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "202",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "23"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "203",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "204",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "205",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "206",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "207",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "208",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "209",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "210",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "211",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "212",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "212A",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "23"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "214",
+    "floor": "2",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.76"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "215",
+    "floor": "2",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "216",
+    "floor": "2",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "217",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "218",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "219",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "220",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "221",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "222",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "223",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "224",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "225",
+    "floor": "2",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "226",
+    "floor": "2",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "227",
+    "floor": "2",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "228",
+    "floor": "2",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "301",
+    "floor": "3",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.76"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "302",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "23"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "303",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "304",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "305",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "306",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "307",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "308",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "309",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "310",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "311",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "312",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "313",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "23"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "314",
+    "floor": "3",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.76"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "315",
+    "floor": "3",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "316",
+    "floor": "3",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "317",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "318",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "319",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "320",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "321",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "322",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "323",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "324",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "325",
+    "floor": "3",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.36"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "326",
+    "floor": "3",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.96"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "327",
+    "floor": "3",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "328",
+    "floor": "3",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "401",
+    "floor": "4",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "402",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "403",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "404",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "405",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "406",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "407",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "408",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "409",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "410",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "411",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "412",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "413",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "414",
+    "floor": "4",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "415",
+    "floor": "4",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "416",
+    "floor": "4",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "417",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "418",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "419",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "420",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "421",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "422",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "423",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "424",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "425",
+    "floor": "4",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "426",
+    "floor": "4",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "427",
+    "floor": "4",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "428",
+    "floor": "4",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "501",
+    "floor": "5",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "502",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "503",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "504",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "505",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "506",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "507",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "508",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "509",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "510",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "511",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "512",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "513",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "514",
+    "floor": "5",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "515",
+    "floor": "5",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "516",
+    "floor": "5",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "517",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "518",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "519",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "520",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "521",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "522",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "523",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "524",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "525",
+    "floor": "5",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "526",
+    "floor": "5",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "527",
+    "floor": "5",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "528",
+    "floor": "5",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "601",
+    "floor": "6",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "602",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "603",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "604",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "605",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "606",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "607",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "608",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "609",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "610",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "611",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "612",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "613",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "614",
+    "floor": "6",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "615",
+    "floor": "6",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "616",
+    "floor": "6",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "617",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "618",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "619",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "620",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "621",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "622",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "623",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "624",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "625",
+    "floor": "6",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "626",
+    "floor": "6",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "627",
+    "floor": "6",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "628",
+    "floor": "6",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "701",
+    "floor": "7",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "702",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "703",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "704",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "705",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "706",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "707",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "708",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "709",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "710",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "711",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "712",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "713",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "714",
+    "floor": "7",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "715",
+    "floor": "7",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "716",
+    "floor": "7",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "717",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "718",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "719",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "720",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "721",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "722",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "723",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "724",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "725",
+    "floor": "7",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "726",
+    "floor": "7",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "727",
+    "floor": "7",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "728",
+    "floor": "7",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "801",
+    "floor": "8",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "802",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "803",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "804",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "805",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "806",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "807",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.88"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "808",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.24"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "809",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "810",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "811",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "812",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "813",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.99"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "814",
+    "floor": "8",
+    "unit_type": "Exclusive A 2 Bed",
+    "area_sqm": "47.7"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "815",
+    "floor": "8",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "816",
+    "floor": "8",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "817",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "818",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "819",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "820",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "821",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "822",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "823",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "35.85"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "824",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "825",
+    "floor": "8",
+    "unit_type": "1 BEDROOM PLUS",
+    "area_sqm": "36.3"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "826",
+    "floor": "8",
+    "unit_type": "STUDIO",
+    "area_sqm": "22.95"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "827",
+    "floor": "8",
+    "unit_type": "1 BEDROOM",
+    "area_sqm": "28.82"
+  },
+  {
+    "building": "wela2",
+    "unit_no": "828",
+    "floor": "8",
+    "unit_type": "Exclusive B 2 Bed",
+    "area_sqm": "47.2"
+  }
+]

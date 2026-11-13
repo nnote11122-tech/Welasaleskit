@@ -29,7 +29,7 @@ Destination: Agentwela (`xqdfojgschwurarfdgbp`).
 
 ### Price import
 
-The `/admin/prices` page is available from the home page and the manager sidebar. It accepts CSV UTF-8 matching the downloadable example (2 MB and 1,000 rows maximum). Replace the illustrative row before importing. Required headers: `building`, `unit_no`, `base_price`. Missing columns preserve existing values; blank optional cells clear those values. Use `wela1` or `wela2` for building. Numeric cells accept plain numbers or correctly grouped, quoted thousands separators.
+The `/admin/prices` page is available from the home page and the manager sidebar. It accepts CSV UTF-8 matching the downloadable template (2 MB and 1,000 rows maximum). The template includes 392 rooms (196 per building) with building, room number, floor, room type and area taken from the source price table on 2026-11-13; this matches quotation metadata rather than the older matrix seed. Prices and promotions are blank for the user to fill. Remove rows not being imported. Required headers: `building`, `unit_no`, `base_price`. Missing columns preserve existing values; blank optional cells clear those values. Use `wela1` or `wela2` for building. Numeric cells accept plain numbers or correctly grouped, quoted thousands separators.
 
 `import_prices` is a SECURITY INVOKER RPC with manager-only checks and RLS. No service-role key is needed by the importer or browser. It validates the entire batch, previews additions/updates/unchanged rows and field changes, and requires a matching preview fingerprint before an atomic commit. Imports have an audit summary in `price_imports`.
 

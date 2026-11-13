@@ -1,4 +1,7 @@
 import Papa from 'papaparse';
+import templateUnits from '../data/priceTemplateUnits.json' with { type: 'json' };
+
+export const PRICE_TEMPLATE_UNIT_COUNT = templateUnits.length;
 
 export const MAX_IMPORT_ROWS = 1000;
 export const MAX_IMPORT_BYTES = 2 * 1024 * 1024;
@@ -68,10 +71,6 @@ export function parsePriceCSV(text) {
 export function priceTemplateCSV() {
   return '\uFEFF' + Papa.unparse({
     fields: PRICE_COLUMNS,
-    data: [PRICE_COLUMNS.map(column => ({
-      building: 'wela1', unit_no: '201', floor: '2', unit_type: 'C',
-      area_sqm: '22.9', base_price: '2500000', registration_disc: '50000',
-      special_disc: '0', voucher_disc: '0', freebie1: 'เครื่องปรับอากาศ',
-    })[column] ?? '')],
+    data: templateUnits.map(unit => PRICE_COLUMNS.map(column => unit[column] ?? '')),
   });
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Download, Upload, CheckCircle2, AlertCircle, Loader2, FileSpreadsheet } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabaseClient';
-import { MAX_IMPORT_BYTES, parsePriceCSV, priceTemplateCSV } from '../lib/priceImport';
+import { MAX_IMPORT_BYTES, PRICE_TEMPLATE_UNIT_COUNT, parsePriceCSV, priceTemplateCSV } from '../lib/priceImport';
 
 const money = value => value == null ? '—' : Number(value).toLocaleString('th-TH', { maximumFractionDigits: 2 });
 const ACTIONS = { insert: 'เพิ่มใหม่', update: 'แก้ไข', unchanged: 'ไม่เปลี่ยน' };
@@ -100,7 +100,8 @@ export default function PriceImport() {
           <div className="space-y-6">
             <section aria-labelledby="file-heading" className="rounded-xl border border-[#dce2e8] bg-white p-5 sm:p-7">
               <h2 id="file-heading" className="text-xl font-semibold">เลือกไฟล์ราคา</h2>
-              <p id="file-help" className="mt-2 text-sm leading-7 text-[#465b70]">ใช้ CSV UTF-8 ตามไฟล์ตัวอย่าง ขนาดไม่เกิน 2 MB และไม่เกิน 1,000 แถวต่อครั้ง แถวตัวอย่างเป็นข้อมูลสมมติ กรุณาแทนที่ก่อนนำเข้า</p>
+              <p id="file-help" className="mt-2 text-sm leading-7 text-[#465b70]">ไฟล์ตัวอย่างมี WELA 1 และ WELA 2 รวม {PRICE_TEMPLATE_UNIT_COUNT} ห้อง พร้อมอาคาร เลขห้อง ชั้น ประเภท และพื้นที่ กรอกราคาและโปรโมชันก่อนบันทึกเป็น CSV UTF-8 รองรับไม่เกิน 2 MB และ 1,000 แถวต่อครั้ง</p>
+              <p className="mt-2 text-sm leading-7 text-[#465b70]">หากนำเข้าเฉพาะบางห้อง ให้ลบแถวที่ไม่ใช้ หากต้องการเก็บส่วนลดหรือโปรโมชันเดิม ให้ลบคอลัมน์นั้นออกจากไฟล์แทนการปล่อยช่องว่าง</p>
               <div className="mt-5 flex flex-wrap items-center gap-4 rounded-lg border border-dashed border-[#9aafc1] bg-[#f8fafc] p-5">
                 <FileSpreadsheet size={28} className="shrink-0 text-[#526c83]" aria-hidden="true" />
                 <div className="min-w-0 flex-1 basis-48">

@@ -1,11 +1,23 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import Papa from 'papaparse';
 import { parsePriceCSV, priceTemplateCSV } from '../src/lib/priceImport.js';
 
-test('template round trips with Thai text and numeric values', () => {
-  const result = parsePriceCSV(priceTemplateCSV());
+test('template includes 392 distinct rooms, real metadata, and blank prices', () => {
+  const template = Papa.parse(priceTemplateCSV(), { header: true }).data;
+  assert.equal(template.length, 392);
+  assert.equal(template.filter(r => r.building === 'wela1').length, 196);
+  assert.equal(template.filter(r => r.building === 'wela2').length, 196);
+  assert.equal(new Set(template.map(r => `${r.building}/${r.unit_no}`)).size, 392);
+  assert.ok(template.every(r => r.floor && r.unit_type && Number(r.area_sqm) > 0));
+  assert.ok(template.every(r => r.base_price === '' && r.freebie1 === '' && r.registration_disc === ''));
+  const first = template.find(r => r.building === 'wela1' && r.unit_no === '201');
+  assert.equal(first.area_sqm, '47.27');
+  assert.equal(first.unit_type, 'Exclusive A 2 Bed');
+  // Filling prices produces an importable batch without changing the seeded room data.
+  const result = parsePriceCSV(Papa.unparse(template.map(r => ({ ...r, base_price: '2500000' }))));
   assert.deepEqual(result.errors, []);
-  assert.equal(result.rows[0].freebie1, 'เครื่องปรับอากาศ');
+  assert.equal(result.rows.length, 392);
   assert.equal(result.rows[0].base_price, 2500000);
 });
 test('preserves room identifiers, quoted commas, and multiline promotions', () => {
