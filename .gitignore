@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local Netlify folder
+.netlify/
+
+# Local Supabase CLI state
+supabase/.temp/
+supabase/.branches/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 50% 10%;
+    --primary: 3 72% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 50% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 20% 45%;
+    --accent: 215 20% 95%;
+    --accent-foreground: 215 50% 10%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 3 72% 58%;
+    --radius: 0.75rem;
+
+    --wela-red: #E14D43;
+    --wela-navy: #003366;
+    --wela-dark: #001a33;
+    --swiper-theme-color: #E14D43;
+    --swiper-navigation-size: 24px;
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Kanit', 'Inter', sans-serif;
+    @apply bg-white text-[#001a33];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kanit', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.swiper-slide-thumb-active {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--wela-red);
+  box-shadow: 0 0 15px rgba(225, 77, 67, 0.4);
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+.animate-subtleZoom { animation: subtleZoom 20s ease-in-out infinite alternate; }
+
+.glass-card { @apply bg-white/5 backdrop-blur-xl border border-white/10; }
