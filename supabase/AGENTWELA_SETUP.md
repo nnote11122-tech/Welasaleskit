@@ -5,6 +5,8 @@ Destination: Agentwela (`xqdfojgschwurarfdgbp`).
 
 ## Completed
 
+- Initialized Agentwela's 392 units from the original inventory on 2026-11-13. The 240 units that were not available became `asakan` (129 in WELA 1 and 111 in WELA 2); 152 available units remained available. No source customer names or notes were copied. Every room's resulting status was checked against the snapshot; the booking RPC rejects Asakan rooms. The matrix and detail view show Asakan in blue. Future bookings still become reserved.
+
 - Applied `initialize_agentwela_schema` to the destination using the live source catalog.
 - Created all six public tables, the unit status enum, primary/unique/foreign-key constraints, three functions, and two triggers.
 - Enabled Realtime for `public.units`.

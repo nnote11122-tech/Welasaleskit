@@ -6,6 +6,7 @@ const WELA_NAVY = '#001a33';
 const WELA_RED  = '#E14D43';
 
 const STATUS_LABELS = {
+  asakan:      'Asakan',
   available:   'ว่าง',
   reserved:    'จองแล้ว',
   contracted:  'ทำสัญญา',
@@ -16,6 +17,7 @@ const STATUS_LABELS = {
 };
 
 const STATUS_STYLE = {
+  asakan:      { bg: '#bae6fd', text: '#075985' },
   available:   { bg: '#dcfce7', text: '#166534' },
   reserved:    { bg: '#fef08a', text: '#713f12' },
   contracted:  { bg: '#fecaca', text: '#991b1b' },
@@ -26,6 +28,7 @@ const STATUS_STYLE = {
 };
 
 const MANAGER_ACTIONS = [
+  { status: 'asakan', label: 'Asakan', bg: '#e0f2fe', border: '#7dd3fc', text: '#075985' },
   { status: 'contracted',  label: '→ ทำสัญญา',       bg: '#fef2f2', border: '#fecaca', text: '#991b1b' },
   { status: 'transferred', label: '→ โอนแล้ว',        bg: '#f0fdf4', border: '#bbf7d0', text: '#14532d' },
   { status: 'available',   label: 'ยกเลิก / คืนสู่ว่าง', bg: '#f8fafc', border: '#cbd5e1', text: '#475569' },

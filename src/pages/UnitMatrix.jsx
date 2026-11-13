@@ -33,6 +33,7 @@ const TYPE_INFO = {
 };
 
 const STATUS_CONFIG = {
+  asakan:      { bg: '#bae6fd', text: '#075985', label: 'Asakan' },
   available:   { bg: '#ffffff', text: '#001a33', label: 'ว่าง' },
   reserved:    { bg: '#fef08a', text: '#713f12', label: 'จอง' },
   contracted:  { bg: '#fecaca', text: '#991b1b', label: 'สัญญา' },
@@ -73,7 +74,7 @@ export default function UnitMatrix() {
   const unitMap = {};
   units.forEach(u => { unitMap[u.unit_no] = u; });
 
-  const counts = { available: 0, reserved: 0, contracted: 0, transferred: 0, locked: 0, pending: 0, hold: 0 };
+  const counts = { available: 0, reserved: 0, contracted: 0, transferred: 0, locked: 0, pending: 0, hold: 0, asakan: 0 };
   units.forEach(u => { if (counts[u.status] !== undefined) counts[u.status]++; });
 
   if (loading) return (
@@ -258,9 +259,9 @@ export default function UnitMatrix() {
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 900, lineHeight: 1.4 }}>{unitNo}</div>
-                      {unit?.customer_name && (
+                      {(status === 'asakan' || unit?.customer_name) && (
                         <div style={{ fontSize: 10, fontWeight: 700, opacity: 0.75, maxWidth: 68, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', margin: '0 auto' }}>
-                          {unit.customer_name}
+                          {status === 'asakan' ? 'Asakan' : unit.customer_name}
                         </div>
                       )}
                     </td>
