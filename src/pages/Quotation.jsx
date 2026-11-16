@@ -122,6 +122,8 @@ const AsakanElysiumFullVersion = forwardRef((props, ref) => {
         specialDisc:      priceRow.special_disc      || 0,
         voucherDisc:      priceRow.voucher_disc      || 0,
         netPriceFromDB:   priceRow.net_price         || 0,
+        // Floor price for the below-floor warning on Booking and Telegram.
+        floorPrice:       priceRow.net_price         || null,
         furnitureDisc:    priceRow.furniture_disc,
         freeTransfer:     priceRow.free_transfer,
         balloon3:         priceRow.balloon_3,
