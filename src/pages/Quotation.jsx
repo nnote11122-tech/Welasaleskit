@@ -353,7 +353,7 @@ const AsakanElysiumFullVersion = forwardRef((props, ref) => {
                     <div>
                       <p className="text-[8px] font-black tracking-[0.7em] uppercase text-white/50 mb-1">Price Quotation</p>
                       <h1 className="text-[24px] font-black uppercase leading-none text-white tracking-tight">Wela Keha–Ram Station</h1>
-                      <p className="text-[9px] tracking-[0.35em] mt-1.5 text-white/50 font-medium">เสนอ A2 Property & Management Co., Ltd.</p>
+                      <p className="text-[9px] tracking-[0.35em] mt-1.5 text-white/50 font-medium">เสนอ คุณ A2 Property & Management Co., Ltd.</p>
                     </div>
                     <div className="flex flex-col items-end gap-2">
                       <div className="text-right">
