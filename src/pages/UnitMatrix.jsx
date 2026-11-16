@@ -163,17 +163,22 @@ export default function UnitMatrix() {
 
       {/* ── Matrix Table ── */}
       <div className="overflow-x-auto px-4 md:px-8 pb-8">
-        <table className="border-collapse">
+        {/* Fixed layout fills the screen width; below the min width it scrolls. */}
+        <table className="border-collapse" style={{ width: '100%', minWidth: 56 + COL_TYPES.length * 43, tableLayout: 'fixed' }}>
+          <colgroup>
+            <col style={{ width: 56 }} />
+            {COL_TYPES.map((_, i) => <col key={i} />)}
+          </colgroup>
           <thead>
             {/* Row 1: Column numbers (colored per type) */}
             <tr>
-              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', minWidth: 56, padding: '10px 12px', fontSize: 11, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', letterSpacing: '0.1em', position: 'sticky', left: 0, zIndex: 2 }}>
+              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '10px 4px', fontSize: 11, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', letterSpacing: '0.1em', position: 'sticky', left: 0, zIndex: 2 }}>
                 FL
               </th>
               {COL_LABELS.map((label, i) => {
                 const info = TYPE_INFO[COL_TYPES[i]] || {};
                 return (
-                  <th key={i} style={{ backgroundColor: info.bg || '#f8fafc', color: info.text || `${WELA_NAVY}99`, minWidth: 72, padding: '10px 6px', fontSize: 12, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)' }}>
+                  <th key={i} style={{ backgroundColor: info.bg || '#f8fafc', color: info.text || `${WELA_NAVY}99`, padding: '10px 2px', fontSize: 12, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)' }}>
                     {label}
                   </th>
                 );
@@ -182,7 +187,7 @@ export default function UnitMatrix() {
 
             {/* Row 2: Type letters (color-coded per type) */}
             <tr>
-              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '7px 12px', fontSize: 11, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
+              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '7px 4px', fontSize: 11, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
                 TYPE
               </th>
               {COL_TYPES.map((type, i) => {
@@ -197,13 +202,13 @@ export default function UnitMatrix() {
 
             {/* Row 3: Unit type name */}
             <tr>
-              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '6px 12px', fontSize: 10, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
+              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '6px 4px', fontSize: 10, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
                 UNIT
               </th>
               {COL_TYPES.map((type, i) => {
                 const info = TYPE_INFO[type] || {};
                 return (
-                  <th key={i} style={{ backgroundColor: info.bg ? `${info.bg}99` : '#f8fafc', color: info.text || `${WELA_NAVY}66`, padding: '5px 3px', fontSize: 10, fontWeight: 700, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', whiteSpace: 'nowrap' }}>
+                  <th key={i} style={{ backgroundColor: info.bg ? `${info.bg}99` : '#f8fafc', color: info.text || `${WELA_NAVY}66`, padding: '5px 1px', fontSize: 9, fontWeight: 700, lineHeight: 1.2, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)' }}>
                     {info.label || '-'}
                   </th>
                 );
@@ -212,7 +217,7 @@ export default function UnitMatrix() {
 
             {/* Row 4: sqm */}
             <tr>
-              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '6px 12px', fontSize: 10, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
+              <th style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '6px 4px', fontSize: 10, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', textTransform: 'uppercase', position: 'sticky', left: 0, zIndex: 2 }}>
                 SQM
               </th>
               {COL_TYPES.map((type, i) => {
@@ -229,7 +234,7 @@ export default function UnitMatrix() {
           <tbody>
             {FLOORS.map(floor => (
               <tr key={floor}>
-                <td style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '10px 12px', fontSize: 14, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', position: 'sticky', left: 0, zIndex: 1 }}>
+                <td style={{ backgroundColor: WELA_NAVY, color: '#fff', padding: '10px 4px', fontSize: 14, fontWeight: 900, textAlign: 'center', border: '1px solid rgba(0,26,51,0.1)', position: 'sticky', left: 0, zIndex: 1 }}>
                   {floor}F
                 </td>
                 {COL_TYPES.map((type, colIdx) => {
@@ -253,14 +258,13 @@ export default function UnitMatrix() {
                         padding: '12px 4px',
                         border: '1px solid rgba(0,26,51,0.08)',
                         textAlign: 'center',
-                        minWidth: 72,
                         height: 64,
                         verticalAlign: 'middle',
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 900, lineHeight: 1.4 }}>{unitNo}</div>
                       {(status === 'asakan' || unit?.customer_name) && (
-                        <div style={{ fontSize: 10, fontWeight: 700, opacity: 0.75, maxWidth: 68, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', margin: '0 auto' }}>
+                        <div style={{ fontSize: 10, fontWeight: 700, opacity: 0.75, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', margin: '0 auto' }}>
                           {status === 'asakan' ? 'Asakan' : unit.customer_name}
                         </div>
                       )}
