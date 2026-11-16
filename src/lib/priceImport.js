@@ -16,6 +16,14 @@ export const PRICE_COLUMNS = [
   ...Array.from({ length: 9 }, (_, i) => `freebie${i + 1}`),
   ...Array.from({ length: 8 }, (_, i) => `note${i + 1}`),
 ];
+// Columns the quotation and booking alert actually read; the downloadable
+// template only offers these. PRICE_COLUMNS stays wider so older files import.
+export const TEMPLATE_COLUMNS = [
+  'building', 'unit_no', 'floor', 'unit_type', 'area_sqm', 'base_price',
+  'registration_disc', 'special_disc', 'voucher_disc', 'net_price', 'booking_fee',
+  ...Array.from({ length: 9 }, (_, i) => `freebie${i + 1}`),
+  ...Array.from({ length: 8 }, (_, i) => `note${i + 1}`),
+];
 const REQUIRED = ['building', 'unit_no', 'base_price'];
 
 export function parsePriceCSV(text) {
@@ -70,7 +78,7 @@ export function parsePriceCSV(text) {
 
 export function priceTemplateCSV() {
   return '\uFEFF' + Papa.unparse({
-    fields: PRICE_COLUMNS,
-    data: templateUnits.map(unit => PRICE_COLUMNS.map(column => unit[column] ?? '')),
+    fields: TEMPLATE_COLUMNS,
+    data: templateUnits.map(unit => TEMPLATE_COLUMNS.map(column => unit[column] ?? '')),
   });
 }

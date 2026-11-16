@@ -1,10 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import Papa from 'papaparse';
-import { parsePriceCSV, priceTemplateCSV } from '../src/lib/priceImport.js';
+import { TEMPLATE_COLUMNS, parsePriceCSV, priceTemplateCSV } from '../src/lib/priceImport.js';
 
 test('template includes 392 distinct rooms, real metadata, and blank prices', () => {
-  const template = Papa.parse(priceTemplateCSV(), { header: true }).data;
+  const parsed = Papa.parse(priceTemplateCSV().replace(/^﻿/, ''), { header: true });
+  const template = parsed.data;
+  assert.deepEqual(parsed.meta.fields, TEMPLATE_COLUMNS);
+  assert.ok(!parsed.meta.fields.includes('net_price_ontop') && !parsed.meta.fields.includes('inst_11'));
   assert.equal(template.length, 392);
   assert.equal(template.filter(r => r.building === 'wela1').length, 196);
   assert.equal(template.filter(r => r.building === 'wela2').length, 196);
