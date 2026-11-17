@@ -6,6 +6,7 @@ const WELA_NAVY = '#001a33';
 const WELA_RED  = '#E14D43';
 
 const STATUS_LABELS = {
+  put_off:     'Put off',
   asakan:      'Asakan',
   available:   'ว่าง',
   reserved:    'จองแล้ว',
@@ -17,6 +18,7 @@ const STATUS_LABELS = {
 };
 
 const STATUS_STYLE = {
+  put_off:     { bg: '#ffedd5', text: '#9a3412' },
   asakan:      { bg: '#bae6fd', text: '#075985' },
   available:   { bg: '#dcfce7', text: '#166534' },
   reserved:    { bg: '#fef08a', text: '#713f12' },
