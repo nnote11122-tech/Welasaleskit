@@ -63,7 +63,8 @@ export function AuthProvider({ children }) {
           setRole(r);
         } catch {
           setAuthError('ตรวจสอบสิทธิ์ไม่สำเร็จ กรุณาลองใหม่');
-          await supabase.auth.signOut();
+          // A failed request is not evidence that access was revoked. Keep the
+          // persisted session so a later auth event can retry the profile check.
         } finally {
           setLoading(false);
         }

@@ -99,7 +99,9 @@ function App() {
       if (!isNaN(savedTime) && (now - savedTime < twentyFourHours)) {
         setIsAuthenticated(true);
       } else {
-        localStorage.clear();
+        // Expiring the passcode must not delete the Supabase login session.
+        localStorage.removeItem('isAsakanAuth');
+        localStorage.removeItem('asakanLoginTime');
         setIsAuthenticated(false);
       }
     }
