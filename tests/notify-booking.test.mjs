@@ -13,7 +13,7 @@ const booking = {
   snapshot_url: 'https://example.invalid/quotation.jpg',
 };
 
-function harness({ record = booking, telegramOK = true, telegramStatus = 502, description = '', secrets = true, authenticated = true, token = '123456789:TEST_ONLY_NOT_A_REAL_TOKEN' } = {}) {
+function harness({ record = booking, telegramOK = true, telegramStatus = 502, description = '', secrets = true, authenticated = true, token = '123456789:TEST_ONLY_NOT_A_REAL_TOKEN', lineConfigured = false, lineOK = true, lineStatus = 401 } = {}) {
   let handler;
   const sent = [];
   const query = { select: () => query, eq: () => query, single: async () => ({ data: record }) };
@@ -23,10 +23,11 @@ function harness({ record = booking, telegramOK = true, telegramStatus = 502, de
   });
   const deno = {
     serve: fn => { handler = fn; },
-    env: { get: key => key.startsWith('TELEGRAM_') ? (secrets ? (key === 'TELEGRAM_BOT_TOKEN' ? token : '-1000000000000') : undefined) : 'test-only' },
+    env: { get: key => key.startsWith('LINE_') ? (lineConfigured ? (key === 'LINE_CHANNEL_ACCESS_TOKEN' ? 'line-test-token' : 'C01234567890123456789012345678901') : undefined) : key.startsWith('TELEGRAM_') ? (secrets ? (key === 'TELEGRAM_BOT_TOKEN' ? token : '-1000000000000') : undefined) : 'test-only' },
   };
   const fetchMock = async (url, options) => {
     sent.push({ url, body: JSON.parse(options.body) });
+    if (url.startsWith('https://api.line.me/')) return { ok: lineOK, status: lineOK ? 200 : lineStatus, headers: { get: () => null } };
     return { ok: telegramOK, status: telegramOK ? 200 : telegramStatus, json: async () => ({ ok: telegramOK, description }) };
   };
   new Function('createClient', 'Deno', 'fetch', code)(createClient, deno, fetchMock);
@@ -76,7 +77,7 @@ test('rejects copied names or surrounding text before contacting Telegram', asyn
   for (const token of ['@Welaapprovebot', 'Here is the token for bot', 'bot12345:ABC', '12345:ABC DEF']) {
     const h = harness({ token });
     const response = await h.run();
-    assert.equal(response.status, 503);
+    assert.equal(response.status, 502);
     const body = await response.json();
     assert.equal(body.reason, 'token_format_invalid');
     assert.equal(h.sent.length, 0);
@@ -88,10 +89,34 @@ test('rejects anonymous callers, pending bookings, and missing secrets without s
   for (const [options, status] of [
     [{ authenticated: false }, 401],
     [{ record: { ...booking, status: 'pending' } }, 409],
-    [{ secrets: false }, 503],
+    [{ secrets: false }, 502],
   ]) {
     const h = harness(options);
     assert.equal((await h.run()).status, status);
     assert.equal(h.sent.length, 0);
+  }
+});
+
+test('sends the same saved booking and image to LINE and Telegram', async () => {
+  const h = harness({ lineConfigured: true });
+  const response = await h.run();
+  const result = await response.json();
+  assert.equal(result.ok, true);
+  assert.deepEqual(result.channels, { telegram: 'sent', line: 'sent' });
+  const line = h.sent.find(r => r.url.startsWith('https://api.line.me/'));
+  assert.ok(line.body.messages[0].text.includes('Test Customer'));
+  assert.ok(line.body.messages[0].text.includes('WelaA-0001'));
+  assert.equal(line.body.messages[1].originalContentUrl, booking.snapshot_url);
+  assert.equal(line.body.messages[0].text.includes('ไม่ต้องอนุมัติ'), false);
+});
+
+test('delivery failures are isolated and partial delivery is reported', async () => {
+  for (const options of [{ lineConfigured: true, lineOK: false }, { lineConfigured: true, telegramOK: false }]) {
+    const h = harness(options);
+    const result = await (await h.run()).json();
+    assert.equal(result.ok, true);
+    assert.ok(result.warning);
+    assert.equal(result.channels.line, options.lineOK === false ? 'failed' : 'sent');
+    assert.equal(result.channels.telegram, options.telegramOK === false ? 'failed' : 'sent');
   }
 });

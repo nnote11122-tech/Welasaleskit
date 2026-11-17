@@ -97,10 +97,10 @@ export default function Booking() {
 
       // 3. แจ้ง Telegram ผ่าน Supabase Edge Function
       try {
-        await notifyBooking(bookingResult.id);
-        alert("จองห้องสำเร็จ");
+        const notification = await notifyBooking(bookingResult.id);
+        alert(notification.warning ? `จองห้องสำเร็จแล้ว\nแจ้งเตือนบางส่วนมีปัญหา: ${notification.warning}\nไม่ต้องจองซ้ำ` : "จองห้องสำเร็จ");
       } catch (notifyError) {
-        alert(`จองห้องสำเร็จแล้ว แต่แจ้ง Telegram ไม่สำเร็จ: ${notifyError.message}\nกรุณาติดต่อผู้ดูแล ไม่ต้องจองซ้ำ`);
+        alert(`จองห้องสำเร็จแล้ว แต่ส่งแจ้งเตือนไม่สำเร็จ: ${notifyError.message}\nกรุณาติดต่อผู้ดูแล ไม่ต้องจองซ้ำ`);
       }
       navigate("/");
 
