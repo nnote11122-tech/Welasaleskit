@@ -25,7 +25,7 @@ const COL_TYPES = [
 const FLOORS = [2, 3, 4, 5, 6, 7, 8];
 
 const TYPE_INFO = {
-  A: { label: 'Exclusive A', sqm: '49',    bg: '#bfdbfe', text: '#1e40af', border: '#93c5fd' },
+  A: { label: 'Exclusive A', sqm: '46',    bg: '#bfdbfe', text: '#1e40af', border: '#93c5fd' },
   B: { label: 'Exclusive B', sqm: '47',    bg: '#fed7aa', text: '#7c2d12', border: '#fdba74' },
   C: { label: 'Studio',      sqm: '22.90',    bg: '#e0f2fe', text: '#0c4a6e', border: '#7dd3fc' },
   D: { label: '1 Bed Plus',    sqm: '36', bg: '#ede9fe', text: '#3b0764', border: '#c4b5fd' },
