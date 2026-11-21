@@ -25,7 +25,7 @@ const COL_TYPES = [
 const FLOORS = [2, 3, 4, 5, 6, 7, 8];
 
 const TYPE_INFO = {
-  A: { label: 'Exclusive A', sqm: '46',    bg: '#bfdbfe', text: '#1e40af', border: '#93c5fd' },
+  A: { label: 'Exclusive A', sqm: '49',    bg: '#bfdbfe', text: '#1e40af', border: '#93c5fd' },
   B: { label: 'Exclusive B', sqm: '47',    bg: '#fed7aa', text: '#7c2d12', border: '#fdba74' },
   C: { label: 'Studio',      sqm: '22.90',    bg: '#e0f2fe', text: '#0c4a6e', border: '#7dd3fc' },
   D: { label: '1 Bed Plus',    sqm: '36', bg: '#ede9fe', text: '#3b0764', border: '#c4b5fd' },
@@ -78,6 +78,16 @@ export default function UnitMatrix() {
 
   const counts = { available: 0, reserved: 0, contracted: 0, transferred: 0, locked: 0, pending: 0, hold: 0, asakan: 0, put_off: 0, rental: 0 };
   units.forEach(u => { if (counts[u.status] !== undefined) counts[u.status]++; });
+
+  // Use the same room-to-type mapping as the matrix columns.
+  const remainingByType = { C: 0, E: 0, D: 0, A: 0, B: 0 };
+  FLOORS.forEach(floor => {
+    COL_TYPES.forEach((type, index) => {
+      const unit = unitMap[String(floor * 100 + index + 1)];
+      if (unit?.status === 'available') remainingByType[type]++;
+    });
+  });
+  const remainingTotal = Object.values(remainingByType).reduce((sum, count) => sum + count, 0);
 
   if (loading) return (
     <div className="min-h-screen bg-white flex items-center justify-center">
@@ -278,6 +288,24 @@ export default function UnitMatrix() {
           </tbody>
         </table>
       </div>
+
+      <section aria-labelledby="remaining-heading" className="mx-4 mb-8 border-t border-[#001a33]/15 pt-6 lg:mx-8">
+        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="remaining-heading" className="text-base font-bold">ห้องคงเหลือแยกตาม Type — {building === 'wela1' ? 'WELA 1' : 'WELA 2'}</h2>
+          <p className="text-sm text-[#001a33]/70">เฉพาะห้องว่าง รวม <strong className="text-[#001a33] tabular-nums">{remainingTotal}</strong> ห้อง</p>
+        </div>
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
+          {Object.entries(remainingByType).map(([type, count]) => (
+            <div key={type} className="flex items-center justify-between gap-3 border-b border-[#001a33]/10 pb-3">
+              <dt className="text-sm">
+                <span className="font-bold">{TYPE_INFO[type].sqm} ตร.ม.</span>
+                <span className="mt-1 block text-xs text-[#001a33]/70">Type {type} · {TYPE_INFO[type].label}</span>
+              </dt>
+              <dd className="whitespace-nowrap text-sm"><strong className="text-2xl font-bold tabular-nums">{count}</strong> ห้อง</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
       {/* ── Mobile status summary ── */}
       <div className="lg:hidden px-4 pb-8 grid grid-cols-2 gap-2">
