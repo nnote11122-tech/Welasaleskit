@@ -52,6 +52,7 @@ const AsakanElysiumFullVersion = forwardRef((props, ref) => {
 
       if (
         data.status === "asakan" ||
+        data.status === "rental" ||
         data.status === "put_off" ||
         data.status === "pending" ||
         data.status === "reserved" ||
@@ -59,6 +60,7 @@ const AsakanElysiumFullVersion = forwardRef((props, ref) => {
       ) {
         let statusThai = "ล็อค";
         if (data.status === "asakan") statusThai = "Asakan";
+        if (data.status === "rental") statusThai = "ห้องเช่า";
         if (data.status === "put_off") statusThai = "Put off";
         if (data.status === "reserved") statusThai = "จองแล้ว";
         if (data.status === "contracted") statusThai = "สัญญาครบแล้ว";

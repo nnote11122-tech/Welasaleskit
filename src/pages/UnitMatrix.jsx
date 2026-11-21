@@ -33,6 +33,7 @@ const TYPE_INFO = {
 };
 
 const STATUS_CONFIG = {
+  rental:      { bg: '#ede9fe', text: '#5b21b6', label: 'ห้องเช่า' },
   put_off:     { bg: '#ffedd5', text: '#9a3412', label: 'Put off' },
   asakan:      { bg: '#bae6fd', text: '#075985', label: 'Asakan' },
   available:   { bg: '#ffffff', text: '#001a33', label: 'ว่าง' },
@@ -75,7 +76,7 @@ export default function UnitMatrix() {
   const unitMap = {};
   units.forEach(u => { unitMap[u.unit_no] = u; });
 
-  const counts = { available: 0, reserved: 0, contracted: 0, transferred: 0, locked: 0, pending: 0, hold: 0, asakan: 0, put_off: 0 };
+  const counts = { available: 0, reserved: 0, contracted: 0, transferred: 0, locked: 0, pending: 0, hold: 0, asakan: 0, put_off: 0, rental: 0 };
   units.forEach(u => { if (counts[u.status] !== undefined) counts[u.status]++; });
 
   if (loading) return (
@@ -264,9 +265,9 @@ export default function UnitMatrix() {
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 900, lineHeight: 1.4 }}>{unitNo}</div>
-                      {(status === 'asakan' || status === 'put_off' || unit?.customer_name) && (
+                      {(status === 'asakan' || status === 'put_off' || status === 'rental' || unit?.customer_name) && (
                         <div style={{ fontSize: 10, fontWeight: 700, opacity: 0.75, maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', margin: '0 auto' }}>
-                          {status === 'asakan' ? 'Asakan' : status === 'put_off' ? 'Put off' : unit.customer_name}
+                          {status === 'rental' ? 'ห้องเช่า' : status === 'asakan' ? 'Asakan' : status === 'put_off' ? 'Put off' : unit.customer_name}
                         </div>
                       )}
                     </td>
